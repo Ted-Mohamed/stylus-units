@@ -1,0 +1,22 @@
+{
+  "name": "stylus-units",
+  "version": "1.0.0",
+  "description": "Units converter for Stylus.",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ted-Mohamed/stylus-units.git"
+  },
+  "keywords": [
+    "units"
+  ],
+  "author": "Mohamed Ted Meftah <contact@mohamed-ted.me> (mohamed-ted.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ted-Mohamed/stylus-units/issues"
+  },
+  "homepage": "https://github.com/Ted-Mohamed/stylus-units#readme"
+}
