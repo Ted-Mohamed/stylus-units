@@ -1,0 +1,166 @@
+@import "../"
+@import "./includes/config"
+
+isDirection(input) { return input in (top right bottom left); }
+
+triangle(size = 10px, direction = top, color = currentColor) {
+    error("Direction must be either 'top', 'right', 'bottom' or 'left'.") unless isDirection(direction)
+    width: 0;
+    height: 0;
+    content: '';
+    z-index: 2;
+    border: size solid transparent;
+    border-{opposite-position(direction)}-color: color;
+}
+
+:root {
+    font-size: root-font-size;
+}
+
+body {
+    font-size: 20px;
+}
+
+.font-test {
+    em-context = 20px;
+    p.px span {
+        &.px { font-size: 30px; }
+        &.pt { font-size: pt(30px); }
+        &.em { font-size: em(30px); }
+        &.rem { font-size: rem(30px); }
+        &.pr { font-size: percent(30px); }
+    }
+
+    p.rem span {
+        &.px { font-size: px(1rem); }
+        &.pt { font-size: pt(1rem); }
+        &.em { font-size: em(1rem); }
+        &.rem { font-size: 1rem; }
+        &.pr { font-size: percent(1rem); }
+    }
+
+    p.em span {
+        &.px { font-size: px(2.5em); }
+        &.pt { font-size: pt(2.5em); }
+        &.rem { font-size: rem(2.5em); }
+        &.em { font-size: 2.5em; }
+        &.pr { font-size: percent(2.5em); }
+    }
+
+    p.pt span {
+        &.px { font-size: px(20pt); }
+        &.pt { font-size: 20pt; }
+        &.rem { font-size: rem(20pt); }
+        &.em { font-size: em(20pt); }
+        &.pr { font-size: percent(20pt); }
+    }
+
+    p.pr span {
+        &.px { font-size: px(150%); }
+        &.pt { font-size: pt(150%); }
+        &.rem { font-size: rem(150%); }
+        &.em { font-size: em(150%); }
+        &.pr { font-size: 150%; }
+    }
+}
+
+.box {
+    height: 20px;
+    margin: 5px;
+    position: relative;
+}
+
+.px .px, .rem .rem, .em .em, .pt .pt, .pr .pr {
+    &:before {
+        position: absolute;
+        top: 0; bottom: 0;
+        right: 100%;
+        margin: auto;
+        triangle(size: 5px, direction: right);
+    }
+}
+
+.px .box {
+    em-context = 20px;
+    background: red;
+    &.px { width: 10px; }
+    &.pt { width: pt(10px); }
+    &.em { width: em(10px); }
+    &.rem { width: rem(10px); }
+    &.pr { width: percent(10px); }
+}
+
+.rem .box {
+    em-context = 20px;
+    background: gold;
+    &.rem { width: 1rem; }
+    &.px { width: px(1rem); }
+    &.pt { width: pt(1rem); }
+    &.em {  width: em(1rem); }
+    &.pr { width: percent(1rem); }
+}
+
+.em .box {
+    em-context = 20px;
+    background: purple;
+    &.em { width: 1em; }
+    &.px { width: px(1em); }
+    &.pt { width: pt(1em); }
+    &.rem { width: rem(1em); }
+    &.pr { width: percent(1em); }
+}
+
+.pt .box {
+    em-context = 20px;
+    background: pink;
+    &.pt { width: 10pt; }
+    &.rem { width: rem(10pt); }
+    &.px { width: px(10pt); }
+    &.em { width: em(10pt); }
+    &.pr { width: percent(10pt); }
+}
+
+.pr .box {
+    em-context = 20px;
+    background: green;
+    &.pr { width: 50%; }
+    &.pt { width: pt(50%); }
+    &.rem { width: rem(50%); }
+    &.px { width: px(50%); }
+    &.em { width: em(50%); }
+}
+
+
+test(value) {
+  input: value;
+  to-px: px(value);
+  to-pt: pt(value);
+  to-em: em(value);
+  to-rem: rem(value);
+  to-percent: percent(value);
+}
+
+.multi {
+  test(1em 16px 12pt 100% 1rem 1ch auto 1cx 0 '#10px' '#10px/2em' '20px/3em' 'ff' '#ff' 'ff/20' '#ff/20' '!20px' 'em');
+}
+
+
+.from-px {
+  test(16px)
+}
+
+.from-pt {
+  test(12pt)
+}
+
+.from-em {
+  test(1em)
+}
+
+.from-rem {
+  test(1rem)
+}
+
+.from-percent {
+  test(100%)
+}
