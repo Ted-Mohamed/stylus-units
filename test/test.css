@@ -1,5 +1,5 @@
 :root {
-  font-size: 50px;
+  font-size: root-font-size;
 }
 body {
   font-size: 20px;
@@ -14,25 +14,25 @@ body {
   font-size: 1.5em;
 }
 .font-test p.px span.rem {
-  font-size: 0.6rem;
+  font-size: 1.875rem;
 }
 .font-test p.px span.pr {
   font-size: 150%;
 }
 .font-test p.rem span.px {
-  font-size: 50px;
+  font-size: 16px;
 }
 .font-test p.rem span.pt {
-  font-size: 37.5pt;
+  font-size: 12pt;
 }
 .font-test p.rem span.em {
-  font-size: 2.5em;
+  font-size: 0.8em;
 }
 .font-test p.rem span.rem {
   font-size: 1rem;
 }
 .font-test p.rem span.pr {
-  font-size: 250%;
+  font-size: 80%;
 }
 .font-test p.em span.px {
   font-size: 50px;
@@ -41,7 +41,7 @@ body {
   font-size: 37.5pt;
 }
 .font-test p.em span.rem {
-  font-size: 1rem;
+  font-size: 3.125rem;
 }
 .font-test p.em span.em {
   font-size: 2.5em;
@@ -56,7 +56,7 @@ body {
   font-size: 20pt;
 }
 .font-test p.pt span.rem {
-  font-size: 0.533333333333333rem;
+  font-size: 1.666666666666667rem;
 }
 .font-test p.pt span.em {
   font-size: 1.333333333333333em;
@@ -71,7 +71,7 @@ body {
   font-size: 22.5pt;
 }
 .font-test p.pr span.rem {
-  font-size: 0.6rem;
+  font-size: 1.875rem;
 }
 .font-test p.pr span.em {
   font-size: 1.5em;
@@ -114,7 +114,7 @@ body {
   width: 0.5em;
 }
 .px .box.rem {
-  width: 0.2rem;
+  width: 0.625rem;
 }
 .px .box.pr {
   width: 50%;
@@ -126,16 +126,16 @@ body {
   width: 1rem;
 }
 .rem .box.px {
-  width: 50px;
+  width: 16px;
 }
 .rem .box.pt {
-  width: 37.5pt;
+  width: 12pt;
 }
 .rem .box.em {
-  width: 2.5em;
+  width: 0.8em;
 }
 .rem .box.pr {
-  width: 250%;
+  width: 80%;
 }
 .em .box {
   background: #800080;
@@ -150,7 +150,7 @@ body {
   width: 15pt;
 }
 .em .box.rem {
-  width: 0.4rem;
+  width: 1.25rem;
 }
 .em .box.pr {
   width: 100%;
@@ -162,7 +162,7 @@ body {
   width: 10pt;
 }
 .pt .box.rem {
-  width: 0.266666666666667rem;
+  width: 0.833333333333333rem;
 }
 .pt .box.px {
   width: 13.333333333333334px;
@@ -183,7 +183,7 @@ body {
   width: 7.5pt;
 }
 .pr .box.rem {
-  width: 0.2rem;
+  width: 0.625rem;
 }
 .pr .box.px {
   width: 10px;
@@ -193,49 +193,50 @@ body {
 }
 .multi {
   input: 1em 16px 12pt 100% 1rem 1ch auto 1cx 0 '#10px' '#10px/2em' '20px/3em' 'ff' '#ff' 'ff/20' '#ff/20' '!20px' 'em';
-  to-px: 50px 16px 16px 50px 50px 1ch auto 1cx 0 '#10px' '#10px/2em' '20px/3em' 'ff' '#ff' 'ff/20' '#ff/20' '!20px' 'em';
-  to-pt: 37.5pt 12pt 12pt 37.5pt 37.5pt 1ch auto 1cx 0 '#10px' '#10px/2em' '20px/3em' 'ff' '#ff' 'ff/20' '#ff/20' '!20px' 'em';
-  to-em: 1em 0.32em 0.32em 1em 1em 1ch auto 1cx 0 '#10px' '#10px/2em' '20px/3em' 'ff' '#ff' 'ff/20' '#ff/20' '!20px' 'em';
-  to-rem: 1rem 0.32rem 0.32rem 1rem 1rem 1ch auto 1cx 0 '#10px' '#10px/2em' '20px/3em' 'ff' '#ff' 'ff/20' '#ff/20' '!20px' 'em';
-  to-percent: 100% 32% 32% 100% 100% 1ch auto 1cx 0 '#10px' '#10px/2em' '20px/3em' 'ff' '#ff' 'ff/20' '#ff/20' '!20px' 'em';
+  to-px: 16px 16px 16px 16px 16px 1ch auto 1cx 0 '#10px' '#10px/2em' '20px/3em' 'ff' '#ff' 'ff/20' '#ff/20' '!20px' 'em';
+  to-pt: 12pt 12pt 12pt 12pt 12pt 1ch auto 1cx 0 '#10px' '#10px/2em' '20px/3em' 'ff' '#ff' 'ff/20' '#ff/20' '!20px' 'em';
+  to-em: 1em 1em 1em 1em 1em 1ch auto 1cx 0 '#10px' '#10px/2em' '20px/3em' 'ff' '#ff' 'ff/20' '#ff/20' '!20px' 'em';
+  to-rem: 1rem 1rem 1rem 1rem 1rem 1ch auto 1cx 0 '#10px' '#10px/2em' '20px/3em' 'ff' '#ff' 'ff/20' '#ff/20' '!20px' 'em';
+  to-percent: 100% 100% 100% 100% 100% 1ch auto 1cx 0 '#10px' '#10px/2em' '20px/3em' 'ff' '#ff' 'ff/20' '#ff/20' '!20px' 'em';
 }
 .from-px {
   input: 16px;
   to-px: 16px;
   to-pt: 12pt;
-  to-em: 0.32em;
-  to-rem: 0.32rem;
-  to-percent: 32%;
+  to-em: 1em;
+  to-rem: 1rem;
+  to-percent: 100%;
 }
 .from-pt {
   input: 12pt;
   to-px: 16px;
   to-pt: 12pt;
-  to-em: 0.32em;
-  to-rem: 0.32rem;
-  to-percent: 32%;
+  to-em: 1em;
+  to-rem: 1rem;
+  to-percent: 100%;
 }
 .from-em {
   input: 1em;
-  to-px: 50px;
-  to-pt: 37.5pt;
+  to-px: 16px;
+  to-pt: 12pt;
   to-em: 1em;
   to-rem: 1rem;
   to-percent: 100%;
 }
 .from-rem {
   input: 1rem;
-  to-px: 50px;
-  to-pt: 37.5pt;
+  to-px: 16px;
+  to-pt: 12pt;
   to-em: 1em;
   to-rem: 1rem;
   to-percent: 100%;
 }
 .from-percent {
   input: 100%;
-  to-px: 50px;
-  to-pt: 37.5pt;
+  to-px: 16px;
+  to-pt: 12pt;
   to-em: 1em;
   to-rem: 1rem;
   to-percent: 100%;
 }
+
