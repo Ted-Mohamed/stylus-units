@@ -1,6 +1,6 @@
 {
   "name": "stylus-units",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Units converter for Stylus.",
   "scripts": {
     "test": "stylus -u ./ < ./test/test.styl > ./test/test.css"
@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/Ted-Mohamed/stylus-units#readme",
   "dependencies": {
-      "stylus": "*"
+    "stylus": "*"
   }
 }
