@@ -1,6 +1,6 @@
 {
   "name": "stylus-units",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Units converter for Stylus.",
   "scripts": {
     "test": "stylus -u ./ < ./test/test.styl > ./test/test.css"
